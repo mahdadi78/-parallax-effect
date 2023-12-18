@@ -26,18 +26,16 @@ class UiCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
       child: Column(
-        children: [
-          _image(context),
-          underText(),
-        ],
+        children: [_image(context), width < 300 ? Container() : underImage()],
       ),
     );
   }
 
-  Widget underText() {
+  Widget underImage() {
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -125,7 +123,7 @@ class UiCard extends StatelessWidget {
 
   Widget _image(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 16 / 7,
+      aspectRatio: 16 / 9,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Stack(
