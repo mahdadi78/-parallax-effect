@@ -9,6 +9,10 @@ class ExampleParallax extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return _verticalScrollview();
+  }
+
+  SingleChildScrollView _verticalScrollview() {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Column(

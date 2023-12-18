@@ -31,30 +31,101 @@ class UiCard extends StatelessWidget {
       child: Column(
         children: [
           _image(context),
-          ListTile(
-            trailing: const Icon(
-              Icons.favorite,
-              size: 17,
-              color: Colors.black38,
-            ),
-            title: Text(
-              producer!,
-              style: const TextStyle(
-                fontSize: 13,
-                color: darkColor,
-              ),
-            ),
-            leading: CircleAvatar(
-                radius: 13, backgroundImage: NetworkImage(logoUrl!)),
-          )
+          underText(),
         ],
       ),
     );
   }
 
+  Widget underText() {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          //avatar and name
+          _avatarAndName(),
+          //favorit Icon
+          Row(
+            children: [
+              _favorit(),
+              const SizedBox(width: 10),
+              //view
+              _view(),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _view() {
+    return Row(
+      children: [
+        const Icon(
+          Icons.visibility,
+          color: Colors.black26,
+          size: 17,
+        ),
+        Text(
+          visit.toString(),
+          style: TextStyle(fontSize: 13, color: darkColor.withOpacity(.7)),
+        ),
+      ],
+    );
+  }
+
+  Widget _favorit() {
+    return Row(
+      children: [
+        const Icon(
+          Icons.favorite,
+          color: Colors.black26,
+          size: 17,
+        ),
+        Text(
+          like.toString(),
+          style: TextStyle(fontSize: 13, color: darkColor.withOpacity(.7)),
+        ),
+      ],
+    );
+  }
+
+  Widget _avatarAndName() {
+    return Row(
+      children: [
+        CircleAvatar(
+          radius: 13,
+          backgroundColor: Colors.black12,
+          backgroundImage: NetworkImage(logoUrl!),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 8),
+          child: Text(
+            producer!,
+            style: const TextStyle(
+                color: darkColor, fontSize: 13, fontWeight: FontWeight.w500),
+          ),
+        ),
+        teamWork!
+            ? Container(
+                margin: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black26),
+                child: const Text(
+                  'Team',
+                  style: TextStyle(fontSize: 10, color: Colors.white),
+                ))
+            : Container(),
+      ],
+    );
+  }
+
   Widget _image(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 16 / 5,
+      aspectRatio: 16 / 7,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Stack(
@@ -96,34 +167,6 @@ class UiCard extends StatelessWidget {
             stops: const [0.6, 0.95],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildTitleAndSubtitle() {
-    return Positioned(
-      left: 20,
-      bottom: 20,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            producer!,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            teamWork.toString(),
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
-          ),
-        ],
       ),
     );
   }

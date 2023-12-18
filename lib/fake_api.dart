@@ -23,9 +23,39 @@ List<UiProduct> uiProductList = [
     logoUrl:
         'https://cdn.dribbble.com/users/130631/avatars/normal/901e10c588ecc352b6ff2aac13398b7b.png?1672247809',
     producer: 'kevin moran',
-    teamWork: true,
+    teamWork: false,
     like: 200,
     visit: 4025,
+  ),
+  UiProduct(
+    imageUrl:
+        'https://cdn.dribbble.com/users/1816377/screenshots/11376294/media/b6a6fcd9feb34305b22eefe67c337f75.jpg?resize=450x338&vertical=center',
+    logoUrl:
+        'https://cdn.dribbble.com/users/7179533/avatars/normal/f422e09d77e62217dc67c457f3cf1807.jpg?1643450830',
+    producer: 'Mrtin MOTOMBO',
+    teamWork: false,
+    like: 85,
+    visit: 145,
+  ),
+  UiProduct(
+    imageUrl:
+        'https://cdn.dribbble.com/userupload/11029233/file/original-a186249a0450b3ac9ac627f7d990f3eb.png?resize=450x338&vertical=center',
+    logoUrl:
+        'https://cdn.dribbble.com/users/77241/avatars/normal/e3a0069803b02cfdb3cb9031ecd3b12e.jpg?1599151966',
+    producer: 'Fernandez',
+    teamWork: false,
+    like: 235,
+    visit: 1002,
+  ),
+  UiProduct(
+    imageUrl:
+        'https://cdn.dribbble.com/users/1032122/screenshots/3263897/the_son_of_toza_folio.jpg?resize=450x338&vertical=center',
+    logoUrl:
+        'https://cdn.dribbble.com/users/8779526/avatars/normal/6259f6e4d10dfa3ff6026a300e87cd0e.png?1632294266',
+    producer: 'gaj',
+    teamWork: true,
+    like: 458,
+    visit: 14,
   ),
   UiProduct(
     imageUrl:
@@ -39,7 +69,7 @@ List<UiProduct> uiProductList = [
   ),
   UiProduct(
     imageUrl:
-        'https://cdn.dribbble.com/userupload/11214820/file/original-0ae5e618e428d9f572df3d230e11ea04.jpg?resize=450x338&vertical=center',
+        'https://cdn.dribbble.com/userupload/11978835/file/original-8654e45d3cc3bb2e20350e664695ae14.jpeg?resize=400x300&vertical=center',
     logoUrl:
         'https://cdn.dribbble.com/users/5146/avatars/normal/Screen_shot_2012-12-15_at_11.50.03_AM.png?1355858187',
     producer: 'donyaSH validation',
@@ -56,16 +86,6 @@ List<UiProduct> uiProductList = [
     teamWork: true,
     like: 78,
     visit: 630,
-  ),
-  UiProduct(
-    imageUrl:
-        'https://cdn.dribbble.com/userupload/11029233/file/original-a186249a0450b3ac9ac627f7d990f3eb.png?resize=450x338&vertical=center',
-    logoUrl:
-        'https://cdn.dribbble.com/users/77241/avatars/normal/e3a0069803b02cfdb3cb9031ecd3b12e.jpg?1599151966',
-    producer: 'Fernandez',
-    teamWork: false,
-    like: 235,
-    visit: 1002,
   ),
   UiProduct(
     imageUrl:
