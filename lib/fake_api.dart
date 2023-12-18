@@ -29,7 +29,7 @@ List<UiProduct> uiProductList = [
   ),
   UiProduct(
     imageUrl:
-        'https://cdn.dribbble.com/userupload/9398775/file/original-37ef0613ee1e0b8c5dadb3a139296269.png?resize=450x338&vertical=center',
+        'https://cdn.dribbble.com/users/674925/screenshots/2856822/media/411ef92c6600622e1fe43ee0e3d7fbff.jpg?resize=400x300&vertical=center',
     logoUrl:
         'https://cdn.dribbble.com/users/485324/avatars/normal/479e0aa76edbad47c51f159fd88e2bfa.png?1551975218',
     producer: 'Catorbily',
