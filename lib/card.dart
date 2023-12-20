@@ -123,7 +123,7 @@ class UiCard extends StatelessWidget {
 
   Widget _image(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 16 / 9,
+      aspectRatio: 16 / 12,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Stack(
