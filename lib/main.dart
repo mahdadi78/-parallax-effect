@@ -2,7 +2,6 @@ import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_14/example_paralax.dart';
-import 'package:flutter_application_14/paralax.dart';
 
 const Color lightColor = Color(0xffF9F7F7);
 const Color darkColor = Color(0xff222831);
@@ -76,7 +75,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ],
-      expandedHeight: 300,
+      expandedHeight: 320,
       flexibleSpace: _flexibleSpace(context),
     );
   }
@@ -86,16 +85,39 @@ class MyApp extends StatelessWidget {
       background: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const SizedBox(
-            height: 100,
-            width: double.maxFinite,
-            child: Image(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://cdn.dribbble.com/users/3894194/screenshots/9713604/media/b36ab7fcd6a2b4bb76aefe54f71cea73.jpg?resize=400x300&vertical=center')),
+          Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.bottomCenter,
+            children: [
+              _imageSerch(),
+              Positioned(
+                left: 40,
+                right: 40,
+                bottom: -24,
+                child: TextField(
+                  style: const TextStyle(
+                      color: darkColor,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1),
+                  decoration: InputDecoration(
+                    hintText: "Search..",
+                    hintStyle: const TextStyle(color: Colors.black26),
+                    label: const Icon(
+                      Icons.search,
+                      size: 20,
+                      color: Colors.black54,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
+                ),
+              ),
+            ],
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(top: 50, right: 20, left: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [_followingButton(), _filtersButton()],
@@ -106,6 +128,17 @@ class MyApp extends StatelessWidget {
           const Divider(height: 3, color: Colors.black12),
         ],
       ),
+    );
+  }
+
+  SizedBox _imageSerch() {
+    return const SizedBox(
+      height: 150,
+      width: double.maxFinite,
+      child: Image(
+          fit: BoxFit.cover,
+          image: NetworkImage(
+              'https://cdn.dribbble.com/userupload/12085738/file/original-402fc99a5c4571eeea88b69500d7f2c4.jpg?crop=0x156-2000x1656&resize=400x300&vertical=center')),
     );
   }
 
