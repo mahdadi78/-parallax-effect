@@ -12,8 +12,33 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+  ///adding animation****************************************************************************
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(seconds: 2), value: 0.1);
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInSine);
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +60,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  SliverAppBar _sliverAppbar() {
+  Widget _sliverAppbar() {
     return SliverAppBar(
       pinned: true,
       floating: true,
@@ -131,14 +156,27 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  SizedBox _imageSerch() {
-    return const SizedBox(
-      height: 150,
-      width: double.maxFinite,
-      child: Image(
-          fit: BoxFit.cover,
-          image: NetworkImage(
-              'https://cdn.dribbble.com/userupload/12085738/file/original-402fc99a5c4571eeea88b69500d7f2c4.jpg?crop=0x156-2000x1656&resize=400x300&vertical=center')),
+  Widget _imageSerch() {
+    return Stack(
+      clipBehavior: Clip.none,
+      alignment: Alignment.center,
+      children: [
+        const SizedBox(
+          height: 150,
+          width: double.maxFinite,
+          child: Image(
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                  'https://cdn.dribbble.com/userupload/12085738/file/original-402fc99a5c4571eeea88b69500d7f2c4.jpg?crop=0x156-2000x1656&resize=400x300&vertical=center')),
+        ),
+        FadeTransition(
+          opacity: _animation,
+          child: const Text(
+            'Hi! Mahdi Haddadi',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ),
+      ],
     );
   }
 
