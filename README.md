@@ -1,12 +1,15 @@
-# flutter_application_14
+# Dribble simulation
 
-A new Flutter project.
+The project is implemented based on Flutter
 
-## Getting Started
+## What things are used?
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
+- 1.Using the parallax effect
+- 2.Proper documentation
+- 3.Using fake data
+- 4.Using SliverList
+  
+![Capture](https://github.com/mahdadi78/-parallax-effect/assets/78992400/e2715392-b473-4339-a7b6-3bbc42ad59c8)
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
