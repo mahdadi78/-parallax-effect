@@ -1,12 +1,6 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_14/example_paralax.dart';
-
-const Color lightColor = Color(0xffF9F7F7);
-const Color darkColor = Color(0xff222831);
-const Color grey = Color(0xff393E46);
-const Color blue = Color(0xff00ADB5);
+import 'package:flutter_application_14/const/constants.dart';
+import 'package:flutter_application_14/Screens/example_paralax.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,26 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
-  ///adding animation****************************************************************************
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-        vsync: this, duration: const Duration(seconds: 2), value: 0.1);
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInSine);
-    _controller.forward();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    _controller.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -59,6 +33,27 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
       ),
     );
   }
+
+  // *adding animation****************************************************************************
+  late AnimationController _controller;
+  late Animation<double> _animation;
+// todo: Initializing the animation parameters
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(seconds: 2), value: 0.1);
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInSine);
+    _controller.forward();
+  }
+
+//todo: Disable animations
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+// **************************************************************************************************
 
   Widget _sliverAppbar() {
     return SliverAppBar(

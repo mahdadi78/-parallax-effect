@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_14/main.dart';
-import 'package:flutter_application_14/paralax.dart';
+import 'package:flutter_application_14/const/constants.dart';
+import 'package:flutter_application_14/const/paralax.dart';
 
 @immutable
 class UiCard extends StatelessWidget {
@@ -30,6 +30,7 @@ class UiCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
       child: Column(
+        //   If the page width is less than 300 pixels, a container will be removed.
         children: [_image(context), width < 300 ? Container() : underImage()],
       ),
     );

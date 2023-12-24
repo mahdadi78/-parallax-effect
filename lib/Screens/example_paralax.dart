@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_14/card.dart';
-import 'package:flutter_application_14/fake_api.dart';
+import 'package:flutter_application_14/widgets.dart/card.dart';
+import 'package:flutter_application_14/models/fake_api.dart';
 
 class ExampleParallax extends StatelessWidget {
   const ExampleParallax({
